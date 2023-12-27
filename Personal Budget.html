@@ -1,0 +1,637 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Personal Budget Tracker</title>
+      <style>
+          /* Add your CSS styles here */
+          body {
+              font-family: Arial, sans-serif;
+          }
+
+          h2 {
+              background-color: #3498db;
+              color: white;
+              padding: 10px;
+          }
+          
+
+          table {
+              width: 100%;
+              border-collapse: collapse;
+          }
+
+          table, th, td {
+              border: 1px solid #ccc;
+          }
+
+          th, td {
+              padding: 3px;
+              text-align: center;
+          }
+
+          th {
+             
+              color: white;
+          }
+
+          .total {
+              font-weight: bold;
+          }
+
+          .add-item-btn {
+              margin-top: 10px;
+              background-color: #3498db;
+              color: white;
+              border: none;
+              padding: 5px 10px;
+              cursor: pointer;
+          }
+      </style>
+  </head>
+  <body>
+      <h1>Personal Budget Tracker</h1>
+      <div class="category">
+          <h2 style="background-color: #6fe73c;">Monthly Income</h2>
+          <table>
+						<tr style="background-color: #d605b0;" >
+                  <th>Housing</th>
+                  <th>Projected</th>
+                  <th>Actual</th>
+                  <th>Difference</th>
+              </tr>
+              <tr>
+                  <td>Rent/Mortagage</td>
+                  <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                  <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                  <td class="diff">$0.00</td>
+              </tr>
+              <tr>
+                  <td>Water</td>
+                  <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                  <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                  <td class="diff">$0.00</td>
+              </tr>
+							<tr>
+									<td>Water</td>
+									<td><input type="text" class="proj" onchange="calculateTotal()"></td>
+									<td><input type="text" class="actual" onchange="calculateTotal()"></td>
+									<td class="diff">$0.00</td>
+							</tr>
+							<tr>
+									<td>Electric</td>
+									<td><input type="text" class="proj" onchange="calculateTotal()"></td>
+									<td><input type="text" class="actual" onchange="calculateTotal()"></td>
+									<td class="diff">$0.00</td>
+							</tr>
+							<tr>
+									<td>Gas</td>
+									<td><input type="text" class="proj" onchange="calculateTotal()"></td>
+									<td><input type="text" class="actual" onchange="calculateTotal()"></td>
+									<td class="diff">$0.00</td>
+							</tr>
+							<tr>
+									<td>Phone</td>
+									<td><input type="text" class="proj" onchange="calculateTotal()"></td>
+									<td><input type="text" class="actual" onchange="calculateTotal()"></td>
+									<td class="diff">$0.00</td>
+							</tr>
+							<tr>
+									<td>Television</td>
+									<td><input type="text" class="proj" onchange="calculateTotal()"></td>
+									<td><input type="text" class="actual" onchange="calculateTotal()"></td>
+									<td class="diff">$0.00</td>
+							</tr>
+							<tr>
+									<td>Insurance</td>
+									<td><input type="text" class="proj" onchange="calculateTotal()"></td>
+									<td><input type="text" class="actual" onchange="calculateTotal()"></td>
+									<td class="diff">$0.00</td>
+							</tr>
+							<tr>
+									<td>Maintanance</td>
+									<td><input type="text" class="proj" onchange="calculateTotal()"></td>
+									<td><input type="text" class="actual" onchange="calculateTotal()"></td>
+									<td class="diff">$0.00</td>
+							</tr>
+							<tr>
+									<td>Internet</td>
+									<td><input type="text" class="proj" onchange="calculateTotal()"></td>
+									<td><input type="text" class="actual" onchange="calculateTotal()"></td>
+									<td class="diff">$0.00</td>
+							</tr>
+							<tr>
+									<td>Fees/Taxes/</td>
+									<td><input type="text" class="proj" onchange="calculateTotal()"></td>
+									<td><input type="text" class="actual" onchange="calculateTotal()"></td>
+									<td class="diff">$0.00</td>
+							</tr>
+							<tr>
+									<td>Home Services</td>
+									<td><input type="text" class="proj" onchange="calculateTotal()"></td>
+									<td><input type="text" class="actual" onchange="calculateTotal()"></td>
+									<td class="diff">$0.00</td>
+							</tr>
+							<tr>
+									<td>Home Improvement</td>
+									<td><input type="text" class="proj" onchange="calculateTotal()"></td>
+									<td><input type="text" class="actual" onchange="calculateTotal()"></td>
+									<td class="diff">$0.00</td>
+							</tr>
+							<tr>
+									<td>Supplies</td>
+									<td><input type="text" class="proj" onchange="calculateTotal()"></td>
+									<td><input type="text" class="actual" onchange="calculateTotal()"></td>
+									<td class="diff">$0.00</td>
+							</tr>
+              </tr>
+              <!-- Add more items here -->
+          </table>
+          <button class="add-item-btn" onclick="addItem('Monthly Income')">Add Item</button>
+      </div>
+
+      <div class="category">
+         
+          <table>
+						<tr style="background-color: #231d10;" >
+                  <th>Personal</th>
+                  <th>Projected</th>
+                  <th>Actual</th>
+                  <th>Difference</th>
+              </tr>
+              <tr>
+                  <td>Beauty</td>
+                  <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                  <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                  <td class="diff">$0.00</td>
+              </tr>
+              <tr>
+                  <td>Wellness</td>
+                  <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                  <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                  <td class="diff">$0.00</td>
+              </tr>
+              <tr>
+                  <td>Lessons</td>
+                  <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                  <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                  <td class="diff">$0.00</td>
+              </tr>
+              <tr>
+                  <td>Clothing</td>
+                  <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                  <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                  <td class="diff">$0.00</td>
+              </tr>
+              <tr>
+                  <td>Hobbies</td>
+                  <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                  <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                  <td class="diff">$0.00</td>
+              </tr>
+              <tr>
+                  <td>Gifts</td>
+                  <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                  <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                  <td class="diff">$0.00</td>
+              </tr>
+              <tr>
+                  <td>Hair Salon</td>
+                  <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                  <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                  <td class="diff">$0.00</td>
+              </tr>
+              <!-- Add more items here -->
+          </table>
+          <button class="add-item-btn" onclick="addItem('Transportation')">Add Item</button>
+      </div>
+      <div class="category">
+          <table>
+						<tr style="background-color: #d60524;" >
+                  <th>Entertainment</th>
+                  <th>Projected</th>
+                  <th>Actual</th>
+                  <th>Difference</th>
+              </tr>
+              <tr>
+                  <td>Movies/Concerts</td>
+                  <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                  <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                  <td class="diff">$0.00</td>
+              </tr>
+              <tr>
+                  <td>Vacation</td>
+                  <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                  <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                  <td class="diff">$0.00</td>
+              </tr>
+              <tr>
+                  <td>Hobies</td>
+                  <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                  <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                  <td class="diff">$0.00</td>
+              </tr>
+              <tr>
+                  <td>Going Out</td>
+                  <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                  <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                  <td class="diff">$0.00</td>
+              </tr>
+              <tr>
+                  <td>Subscriptions</td>
+                  <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                  <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                  <td class="diff">$0.00</td>
+              </tr>
+              <tr>
+                  <td>Going Out</td>
+                  <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                  <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                  <td class="diff">$0.00</td>
+              </tr>
+              <tr>
+                  <td>Subscriptions</td>
+                  <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                  <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                  <td class="diff">$0.00</td>
+              </tr>
+          </table>
+          <button class="add-item-btn" onclick="addItem('Transportation')">Add Item</button>
+      </div>
+
+      <div class="category">
+          <table>
+						<tr style="background-color: #05cfd6;" >
+                  <th>Health</th>
+                  <th>Projected</th>
+                  <th>Actual</th>
+                  <th>Difference</th>
+              </tr>
+              <tr>
+                  <td>Mental Health</td>
+                  <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                  <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                  <td class="diff">$0.00</td>
+              </tr>
+              <tr>
+                  <td>Medicine</td>
+                  <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                  <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                  <td class="diff">$0.00</td>
+              </tr>
+              <tr>
+                  <td>Prescriptions</td>
+                  <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                  <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                  <td class="diff">$0.00</td>
+              </tr>
+              <tr>
+                  <td>Vitamins</td>
+                  <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                  <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                  <td class="diff">$0.00</td>
+              </tr>
+              <tr>
+                  <td>Subscriptions</td>
+                  <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                  <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                  <td class="diff">$0.00</td>
+              </tr>
+              <tr>
+                  <td>Insurance</td>
+                  <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                  <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                  <td class="diff">$0.00</td>
+              </tr>
+          </table>
+          <button class="add-item-btn" onclick="addItem('Transportation')">Add Item</button>
+      </div>
+
+      <div class="category">
+       
+        <table>
+            <tr style="background-color: #75463d;" >
+                <th>Food</th>
+                <th>Projected</th>
+                <th>Actual</th>
+                <th>Difference</th>
+            </tr>
+            <tr>
+                <td>Groceries</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Dinner Out</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Coffee</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Fast Food</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Work Lunches</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Alcohol</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Snacks</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+		</table>
+			<button class="add-item-btn" onclick="addItem('Transportation')">Add Item</button>
+	    </div>
+      <div class="category">
+       
+        <table>
+            <tr style="background-color: #d69405;" >
+                <th>Children</th>
+                <th>Projected</th>
+                <th>Actual</th>
+                <th>Difference</th>
+            </tr>
+            <tr>
+                <td>Childcare</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Tuition</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Classes</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>School Meals</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Toys</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>School Supply</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Clothing</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Sports</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Activities</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Babysitter</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Allowance</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Camp</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+					</table>
+					<button class="add-item-btn" onclick="addItem('Transportation')">Add Item</button>
+				</div>
+
+      <div class="category">
+        <table>
+            <tr style="background-color: #12f3bb;" >
+                <th>Pets</th>
+                <th>Projected</th>
+                <th>Actual</th>
+                <th>Difference</th>
+            </tr>
+            <tr>
+                <td>Food</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Veterinarian</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Medications</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Sitter</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Boarding</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Bedding</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Walking</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Grooming</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Toys</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <!-- Add more items here -->
+					</table>
+						<button class="add-item-btn" onclick="addItem('Personal')">Add Item</button>
+					</div>
+      <div class="category">
+        <table>
+            <tr style="background-color: #f31259;" >
+                <th>Giving</th>
+                <th>Projected</th>
+                <th>Actual</th>
+                <th>Difference</th>
+            </tr>
+            <tr>
+                <td>Charities</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Religious</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Political</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+           
+            <!-- Add more items here -->
+					</table>
+						<button class="add-item-btn" onclick="addItem('Personal')">Add Item</button>
+					</div>
+      <div class="category">
+        <table>
+            <tr style="background-color: #f3d912;" >
+                <th>Investments/Savings</th>
+                <th>Projected</th>
+                <th>Actual</th>
+                <th>Difference</th>
+            </tr>
+            <tr>
+                <td>General</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Emergy</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Vacation</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Investment Account</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+            <tr>
+                <td>Retirement Account</td>
+                <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                <td class="diff">$0.00</td>
+            </tr>
+           
+            <!-- Add more items here -->
+					</table>
+						<button class="add-item-btn" onclick="addItem('Personal')">Add Item</button>
+					</div>
+    </div>
+
+      <div class="total">
+          Total: <span id="total">$0.00</span>
+      </div>
+
+      <script>
+          // JavaScript logic
+          function calculateTotal() {
+              let total = 0;
+              const categories = document.querySelectorAll('.category');
+              categories.forEach(category => {
+                  const projFields = category.querySelectorAll('.proj');
+                  const actualFields = category.querySelectorAll('.actual');
+                  const diffFields = category.querySelectorAll('.diff');
+
+                  let categoryTotal = 0;
+
+                  projFields.forEach((projField, index) => {
+                      const projValue = parseFloat(projField.value) || 0;
+                      const actualValue = parseFloat(actualFields[index].value) || 0;
+
+                      const diffValue = actualValue - projValue;
+                      diffFields[index].textContent = `$${diffValue.toFixed(2)}`;
+
+                      categoryTotal += actualValue;
+                  });
+
+                  total += categoryTotal;
+              });
+
+              document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+          }
+
+          function addItem(categoryName) {
+              const category = document.querySelector(`.category h2:contains("${categoryName}")`).parentNode;
+              const table = category.querySelector('table');
+              const newRow = document.createElement('tr');
+              newRow.innerHTML = `
+                  <td><input type="text" class="proj" onchange="calculateTotal()"></td>
+                  <td><input type="text" class="actual" onchange="calculateTotal()"></td>
+                  <td class="diff">$0.00</td>
+              `;
+              table.appendChild(newRow);
+          }
+      </script>
+  </body>
+  </html>
